@@ -12,3 +12,4 @@ Route::get('/home', function () {
 
 
 Route::resource('admins', 'AdminController');
+Route::resource('categories', 'CategoryController');

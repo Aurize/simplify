@@ -13,7 +13,15 @@ require('./bootstrap-bulma');
  * the application, or feel free to tweak this setup for your needs.
  */
 
+
 Vue.component('example', require('./components/Example.vue'));
+Vue.component('search', require('./components/Search.vue'));
+Vue.component('offer-vertical', require('./components/OfferVertical.vue'));
+Vue.component('promoted-offers', require('./components/PromotedOffers.vue'));
+Vue.component('nav-default', require('./components/NavDefault.vue'));
+Vue.component('offers', require('./components/Offers.vue'));
+Vue.component('offer-horizontal', require('./components/OfferHorizontal.vue'));
+Vue.component('pagination', require('./components/Pagination.vue'));
 
 const app = new Vue({
     el: '#app'
