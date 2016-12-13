@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "7b7dd9629ec8408065ded4ca6745258e",
-    "content-hash": "d63d4a131e01932fcb00922422141da0",
+    "hash": "ddb154ae21a7f369be22eaa2067d1e24",
+    "content-hash": "c36b0403b71f1472a815c4b0109e9959",
     "packages": [
         {
             "name": "barryvdh/laravel-debugbar",
@@ -252,43 +252,6 @@
             "time": "2016-11-24 14:09:12"
         },
         {
-            "name": "hesto/laravel-basis",
-            "version": "v1.0.6",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Hesto/laravel-basis.git",
-                "reference": "da39a4ea92cf5c893a5e1c21adbdc2512d453e15"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Hesto/laravel-basis/zipball/da39a4ea92cf5c893a5e1c21adbdc2512d453e15",
-                "reference": "da39a4ea92cf5c893a5e1c21adbdc2512d453e15",
-                "shasum": ""
-            },
-            "require": {
-                "hesto/core": ">=1.0.6",
-                "php": ">=5.5.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Hesto\\LaravelBasis\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Hesto",
-                    "email": "losiakp@gmail.com"
-                }
-            ],
-            "description": "A bootstrap package for initial setup a new laravel application.",
-            "time": "2016-12-06 10:27:36"
-        },
-        {
             "name": "hesto/rbac",
             "version": "v1.0.2",
             "source": {
@@ -414,20 +377,20 @@
         },
         {
             "name": "jeremeamia/SuperClosure",
-            "version": "2.2.0",
+            "version": "2.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jeremeamia/super_closure.git",
-                "reference": "29a88be2a4846d27c1613aed0c9071dfad7b5938"
+                "reference": "443c3df3207f176a1b41576ee2a66968a507b3db"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jeremeamia/super_closure/zipball/29a88be2a4846d27c1613aed0c9071dfad7b5938",
-                "reference": "29a88be2a4846d27c1613aed0c9071dfad7b5938",
+                "url": "https://api.github.com/repos/jeremeamia/super_closure/zipball/443c3df3207f176a1b41576ee2a66968a507b3db",
+                "reference": "443c3df3207f176a1b41576ee2a66968a507b3db",
                 "shasum": ""
             },
             "require": {
-                "nikic/php-parser": "^1.2|^2.0",
+                "nikic/php-parser": "^1.2|^2.0|^3.0",
                 "php": ">=5.4",
                 "symfony/polyfill-php56": "^1.0"
             },
@@ -437,7 +400,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.2-dev"
+                    "dev-master": "2.3-dev"
                 }
             },
             "autoload": {
@@ -468,7 +431,7 @@
                 "serialize",
                 "tokenizer"
             ],
-            "time": "2015-12-05 17:17:57"
+            "time": "2016-12-07 09:37:55"
         },
         {
             "name": "laravel/framework",
@@ -2448,46 +2411,6 @@
             ],
             "description": "Generators for Laravel Framework",
             "time": "2016-12-06 10:11:20"
-        },
-        {
-            "name": "hesto/laravel-bulma",
-            "version": "v1.0.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Hesto/laravel-bulma.git",
-                "reference": "0ddb4aee0d4a4d6c2fbfe7eba178f160a90177c6"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Hesto/laravel-bulma/zipball/0ddb4aee0d4a4d6c2fbfe7eba178f160a90177c6",
-                "reference": "0ddb4aee0d4a4d6c2fbfe7eba178f160a90177c6",
-                "shasum": ""
-            },
-            "require": {
-                "hesto/core": ">=1.0.5",
-                "php": ">=5.5.0"
-            },
-            "type": "library",
-            "autoload": {
-                "classmap": [
-                    "src/commands"
-                ],
-                "psr-4": {
-                    "Hesto\\LaravelBulma\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Hesto",
-                    "email": "losiakp@gmail.com"
-                }
-            ],
-            "description": "Bulma Installation package for Laravel 5",
-            "time": "2016-12-06 10:06:48"
         },
         {
             "name": "hesto/multi-auth",

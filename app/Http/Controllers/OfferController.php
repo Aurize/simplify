@@ -52,7 +52,7 @@ class OfferController extends Controller
      */
     public function show(Offer $offer)
     {
-        return view('front.offers.show.default', compact('offer'));
+        return view('front.offers.show', compact('offer'));
     }
 
     /**

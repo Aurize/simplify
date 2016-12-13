@@ -20,7 +20,7 @@
     </section>
     <section class="section">
         <div class="container">
-            <promoted-offers></promoted-offers>
+            <promoted-offers-list></promoted-offers-list>
         </div>
     </section>
     <footer class="footer">

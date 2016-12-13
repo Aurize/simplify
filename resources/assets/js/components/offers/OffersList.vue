@@ -1,7 +1,7 @@
 <template>
     <div class="columns is-multiline">
         <div class="column is-12">
-            <pagination :max=offers.length current=5></pagination>
+            <pagination :max=offers.length :current=page></pagination>
         </div>
         <div class="column is-12" v-for="offer in offers">
             <offer-horizontal></offer-horizontal>
@@ -18,7 +18,8 @@
         },
         data() {
             return {
-                offers: []
+                offers: [],
+                page: 3,
             }
         },
         methods: {

@@ -26,7 +26,6 @@ class AppServiceProvider extends ServiceProvider
         if ($this->app->environment() == "local") {
             $this->app->register('Hesto\MultiAuth\MultiAuthServiceProvider');
             $this->app->register('Hesto\Generators\GeneratorsServiceProvider');
-            $this->app->register('Hesto\LaravelBulma\BulmaServiceProvider');
             $this->app->register('Laracasts\Generators\GeneratorsServiceProvider');
             $this->app->register('Barryvdh\Debugbar\ServiceProvider');
         }

@@ -9,13 +9,11 @@
         "laravelcollective/html": "5.3.*",
         "barryvdh/laravel-debugbar": "^2.2",
         "php": ">=5.6.4",
-        "laravel/framework": "5.3.*",
-        "hesto/laravel-basis": "^1.0"
+        "laravel/framework": "5.3.*"
     },
     "require-dev": {
         "hesto/multi-auth": "^1.0",
         "hesto/generators": "^1.0",
-        "hesto/laravel-bulma": "^1.0",
         "laracasts/generators": "^1.1",
         "barryvdh/laravel-ide-helper": "^2.1",
         "fzaninotto/faker": "~1.4",

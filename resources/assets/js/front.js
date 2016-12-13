@@ -16,12 +16,18 @@ require('./bootstrap-bulma');
 
 Vue.component('example', require('./components/Example.vue'));
 Vue.component('search', require('./components/Search.vue'));
-Vue.component('offer-vertical', require('./components/OfferVertical.vue'));
-Vue.component('promoted-offers', require('./components/PromotedOffers.vue'));
+
 Vue.component('nav-default', require('./components/NavDefault.vue'));
-Vue.component('offers', require('./components/Offers.vue'));
-Vue.component('offer-horizontal', require('./components/OfferHorizontal.vue'));
+
+Vue.component('offer-vertical', require('./components/offers/OfferVertical.vue'));
+Vue.component('offers-list', require('./components/offers/OffersList.vue'));
+Vue.component('offer', require('./components/offers/Offer.vue'));
+Vue.component('offer-horizontal', require('./components/offers/OfferHorizontal.vue'));
+Vue.component('promoted-offers-list', require('./components/offers/PromotedOffersList.vue'));
+
 Vue.component('pagination', require('./components/Pagination.vue'));
+Vue.component('reviews-list', require('./components/ReviewsList.vue'));
+Vue.component('review', require('./components/Review.vue'));
 
 const app = new Vue({
     el: '#app'

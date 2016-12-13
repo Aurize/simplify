@@ -169,8 +169,6 @@ return [
         Hesto\Rbac\RbacServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
 
-        Hesto\LaravelBasis\BasisServiceProvider::class,
-
         /*
          * Application Service Providers...
          */
