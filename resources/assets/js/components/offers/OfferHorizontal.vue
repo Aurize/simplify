@@ -30,6 +30,7 @@
     export default {
         mounted() {
             console.log('Component ready.')
-        }
+        },
+        props: ['offer']
     }
 </script>

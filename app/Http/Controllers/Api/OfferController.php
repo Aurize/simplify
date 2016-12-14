@@ -7,6 +7,7 @@ use App\Transformers\OfferTransformer;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use Illuminate\Support\Facades\Input;
 
 class OfferController extends ApiController
 {
@@ -31,10 +32,11 @@ class OfferController extends ApiController
      */
     public function index()
     {
-        $offers = Offer::all();
+        $limit = Input::get('limit') ? : 10;
+        $offers = Offer::paginate($limit);
 
-        return $this->respond([
-            'data' => $this->transformer->transformCollection($offers)
+        return $this->respondWithPagination($offers, [
+            'data' => $this->transformer->transformCollection($offers),
         ]);
     }
 

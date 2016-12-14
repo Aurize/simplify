@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Pagination\LengthAwarePaginator;
+use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\Response;
 
 
@@ -81,5 +83,25 @@ class ApiController extends Controller
                 'status_code' => $this->getStatusCode()
             ]
         ]);
+    }
+
+    /**
+     * @param LengthAwarePaginator $paginator
+     * @param $data
+     * @return mixed
+     */
+    public function respondWithPagination(LengthAwarePaginator $paginator, $data)
+    {
+        $data = array_merge($data, [
+            'paginator' => [
+                'total_count' => $paginator->total(),
+                'total_pages' => ceil($paginator->total() / $paginator->perPage()),
+                'current_page' => $paginator->currentPage(),
+                'limit' => $paginator->perPage(),
+            ]
+        ]);
+
+        return $this->respond($data);
+
     }
 }

@@ -2,6 +2,6 @@
 
 @section('content')
     <section class="section">
-        <offer></offer>
+        <offer id="1"></offer>
     </section>
 @endsection

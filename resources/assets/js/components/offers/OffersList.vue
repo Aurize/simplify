@@ -1,10 +1,10 @@
 <template>
     <div class="columns is-multiline">
         <div class="column is-12">
-            <pagination :max=offers.length :current=page></pagination>
+            <pagination :max=offers.length :paginator=paginator link="offers"></pagination>
         </div>
         <div class="column is-12" v-for="offer in offers">
-            <offer-horizontal></offer-horizontal>
+            <offer-horizontal :offer=offer></offer-horizontal>
         </div>
     </div>
 </template>
@@ -16,18 +16,28 @@
 
             this.fetchOffers();
         },
+        props: ['limit', 'page'],
         data() {
             return {
                 offers: [],
-                page: 3,
+                paginator: {
+                    total_count: 0,
+                    total_pages: 0,
+                    current_page: 0,
+                    limit: 0
+                },
             }
         },
         methods: {
             fetchOffers() {
-                this.$http.get('/api/offers').then((response) => {
+                this.$http.get('/api/offers?limit=' + this.limit + '&' + 'page=' + this.page).then((response) => {
                     this.offers = response.data.data;
+                    this.paginator = response.data.paginator;
                 });
             }
+        },
+        computed: {
+
         }
     }
 </script>

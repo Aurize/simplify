@@ -17,6 +17,7 @@ class OfferTransformer extends Transformer
             'place_id' => $offer->place_id,
             'category_id' => $offer->category_id,
             'name' => $offer->name,
+            'reviews' => (new ReviewTransformer)->transformCollection($offer->reviews),
         ];
     }
 }

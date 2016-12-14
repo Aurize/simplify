@@ -75,7 +75,7 @@
                 </table>
             </div>
         </div>
-        <reviews-list></reviews-list>
+        <reviews-list :reviews=offer.reviews></reviews-list>
     </div>
 </template>
 
@@ -83,13 +83,22 @@
     export default {
         mounted() {
             console.log('Component ready.');
+            this.fetchOffer();
         },
+        props: ['id'],
         data() {
             return {
-                reviews: [1,2,3]
+                offer: {
+                    reviews: []
+                }
             }
         },
         methods: {
+            fetchOffer() {
+                this.$http.get('/api/offers/' + this.id).then((response) => {
+                    this.offer = response.data.data;
+                });
+            }
         }
     }
 </script>

@@ -1,28 +1,28 @@
 <template>
     <nav class="pagination">
-        <a :href="previous.link" class="button">Previous</a>
-        <a :href="next.link" class="button">Next page</a>
+        <a :href="getLink(previousPage)" class="button" :disabled="!showPrevious">Previous</a>
+        <a :href="getLink(nextPage)" class="button" :disabled="!showNext">Next page</a>
         <ul>
-            <li>
-                <a class="button">1</a>
+            <li v-if="showFirst">
+                <a :href="getLink(1)" class="button">1</a>
             </li>
-            <li>
+            <li v-if="showFirstSpace">
                 <span>...</span>
             </li>
-            <li>
-                <a class="button">45</a>
+            <li v-if="showPrevious">
+                <a :href="getLink(previousPage)" class="button">{{ previousPage }}</a>
             </li>
             <li>
-                <a class="button is-primary">46</a>
+                <a :href="getLink(paginator.current_page)" class="button is-primary">{{ paginator.current_page }}</a>
             </li>
-            <li>
-                <a class="button">47</a>
+            <li v-if="showNext">
+                <a :href="getLink(nextPage)" class="button">{{ nextPage }}</a>
             </li>
-            <li>
+            <li v-if="showLastSpace">
                 <span>...</span>
             </li>
-            <li>
-                <a class="button">{{ max }}</a>
+            <li v-if="showLast">
+                <a :href="getLink(paginator.total_pages)" class="button">{{ paginator.total_pages }}</a>
             </li>
         </ul>
     </nav>
@@ -35,35 +35,43 @@
 
             this.setup();
         },
-        props: {
-            current: {
-                type: Number,
-                default: 0
-            },
-            max: {
-                type: Number,
-                default: 0
-            }
-        },
+        props: ['paginator', 'link'],
         data() {
             return {
-                previous: {
-                    link: '',
-                    value: 0
-                },
-                next: {
-                    link: '',
-                    value: 0
-                }
+                pages: []
             }
         },
         methods: {
             setup() {
-                this.previous.value = this.current - parseInt(1);
-                this.previous.link = '/offers?page=' + this.previous.value;
-
-                this.next.value = this.current + parseInt(1);
-                this.next.link = '/offers?page=' + this.next.value;
+            },
+            getLink(page) {
+                return '/' + this.link + '?page=' + page + '&limit=' + this.paginator.limit;
+            }
+        },
+        computed: {
+            nextPage() {
+                return this.paginator.current_page + 1;
+            },
+            previousPage() {
+                return this.paginator.current_page - 1;
+            },
+            showFirst() {
+                return this.paginator.current_page > 1;
+            },
+            showFirstSpace() {
+                return this.paginator.current_page > 3;
+            },
+            showLast() {
+                return this.paginator.current_page < (this.paginator.total_pages - 1);
+            },
+            showLastSpace() {
+                return this.paginator.current_page < (this.paginator.total_pages - 1);
+            },
+            showNext() {
+                return this.paginator.current_page < this.paginator.total_pages;
+            },
+            showPrevious() {
+                return this.paginator.current_page > 2;
             }
         }
     }

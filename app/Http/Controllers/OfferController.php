@@ -6,6 +6,7 @@ use App\Offer;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use Illuminate\Support\Facades\Input;
 
 class OfferController extends Controller
 {
@@ -16,9 +17,10 @@ class OfferController extends Controller
      */
     public function index()
     {
-        $offers = Offer::all();
+        $page = Input::get('page') ? : 1;
+        $limit = Input::get('limit') ? : 10;
 
-        return view('front.offers.index', compact('offers'));
+        return view('front.offers.index', compact('page', 'limit'));
     }
 
     /**
